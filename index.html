@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Faizan Saleem Siddiqui | Embedded Firmware Engineer</title>
+  <meta name="description" content="Faizan Saleem Siddiqui is an embedded firmware engineer building BLE wearable and wireless audio firmware on nRF52 (Zephyr), STM32 and ESP32, and Visiting Faculty in Embedded Systems at Quaid-i-Azam University, Islamabad.">
+  <meta name="author" content="Faizan Saleem Siddiqui">
+  <link rel="canonical" href="https://faizanssdq.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Faizan Saleem Siddiqui | Embedded Firmware Engineer">
+  <meta property="og:description" content="Firmware for BLE wearables and wireless audio on nRF52 / Zephyr, STM32 and ESP32. Visiting Faculty, Quaid-i-Azam University.">
+  <meta property="og:url" content="https://faizanssdq.github.io/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/139341566?v=4&s=460">
+  <meta property="profile:first_name" content="Faizan">
+  <meta property="profile:last_name" content="Saleem Siddiqui">
+  <meta name="twitter:card" content="summary">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Faizan Saleem Siddiqui",
+    "url": "https://faizanssdq.github.io/",
+    "image": "https://avatars.githubusercontent.com/u/139341566?v=4&s=460",
+    "jobTitle": "Embedded Firmware Engineer",
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Quaid-i-Azam University" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Islamabad", "addressCountry": "PK" },
+    "email": "mailto:faizansaleemsdq@gmail.com",
+    "knowsAbout": ["Embedded firmware", "Bluetooth Low Energy", "Zephyr RTOS", "nRF52", "STM32", "ESP32", "FreeRTOS", "Digital signal processing", "OTA firmware updates", "Low-power design"],
+    "sameAs": [
+      "https://github.com/FaizanSSDQ",
+      "https://www.linkedin.com/in/faizan-saleem-siddiqui-4411bb247/",
+      "https://x.com/Bilingual_USER",
+      "https://medium.com/@faizyrim.114978"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f7f8fa; --surface: #ffffff; --text: #1a202c; --muted: #4a5568; --faint: #718096;
+      --line: #e2e8f0; --accent: #2b6cb0; --accent-soft: #ebf4ff; --chip: #edf2f7;
+      --shadow: 0 1px 2px rgba(0,0,0,.05), 0 4px 16px rgba(0,0,0,.04);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0f1419; --surface: #171d24; --text: #e6edf3; --muted: #a9b4c0; --faint: #7d8a97;
+        --line: #2a323c; --accent: #63a4ff; --accent-soft: #15253a; --chip: #212a34;
+        --shadow: none;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #0f1419; --surface: #171d24; --text: #e6edf3; --muted: #a9b4c0; --faint: #7d8a97;
+      --line: #2a323c; --accent: #63a4ff; --accent-soft: #15253a; --chip: #212a34; --shadow: none;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+    nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent);
+          backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    nav .wrap { display: flex; align-items: center; gap: 20px; height: 56px; overflow-x: auto; }
+    nav .brand { font-weight: 700; color: var(--text); white-space: nowrap; margin-right: auto; }
+    nav a.link { color: var(--muted); font-size: 14px; white-space: nowrap; }
+
+    header.hero { padding: 56px 0 40px; }
+    .hero .wrap { display: grid; grid-template-columns: 160px 1fr; gap: 32px; align-items: center; }
+    .hero img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
+                border: 4px solid var(--surface); box-shadow: var(--shadow); background: var(--chip); }
+    .hero h1 { margin: 0; font-size: clamp(28px, 5vw, 40px); line-height: 1.15; }
+    .hero .title { margin: 8px 0 4px; font-size: 18px; font-weight: 600; color: var(--accent); }
+    .hero .sub { margin: 0 0 18px; color: var(--muted); }
+    .buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 8px;
+           border: 1px solid var(--line); background: var(--surface); color: var(--text); font-weight: 600;
+           font-size: 14px; }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn:hover { text-decoration: none; filter: brightness(.97); }
+    .badge { display: inline-block; margin-top: 14px; padding: 4px 12px; border-radius: 999px;
+             background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 600; }
+
+    section { padding: 40px 0; border-top: 1px solid var(--line); }
+    h2 { margin: 0 0 20px; font-size: 22px; }
+    p { margin: 0 0 12px; }
+    .lead { color: var(--muted); max-width: 760px; }
+
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px;
+            box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 8px; font-size: 17px; }
+    .card p { color: var(--muted); font-size: 15px; }
+    .card .meta { font-size: 13px; color: var(--faint); margin-bottom: 8px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .tag { padding: 2px 10px; border-radius: 999px; background: var(--chip); color: var(--muted); font-size: 12.5px; }
+
+    .skills { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .skills div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+    .skills b { display: block; margin-bottom: 6px; }
+    .skills span { color: var(--muted); font-size: 15px; }
+
+    .timeline { list-style: none; margin: 0; padding: 0; }
+    .timeline > li { position: relative; padding: 0 0 22px 24px; border-left: 2px solid var(--line); margin-left: 6px; }
+    .timeline > li:last-child { padding-bottom: 0; }
+    .timeline > li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px;
+                           border-radius: 50%; background: var(--accent); }
+    .timeline .when { font-size: 13px; color: var(--faint); }
+    .timeline h3 { margin: 2px 0 2px; font-size: 16.5px; }
+    .timeline .org { color: var(--muted); font-size: 15px; margin-bottom: 6px; }
+    .timeline ul { margin: 4px 0 0; padding-left: 18px; color: var(--muted); font-size: 15px; }
+
+    footer { padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--faint); font-size: 14px; }
+    footer .row { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; }
+
+    @media (max-width: 640px) {
+      .hero .wrap { grid-template-columns: 1fr; text-align: center; }
+      .hero img { margin: 0 auto; width: 128px; height: 128px; }
+      .buttons { justify-content: center; }
+      nav a.link.optional { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Main">
+    <div class="wrap">
+      <a class="brand" href="#top">Faizan Saleem Siddiqui</a>
+      <a class="link" href="#about">About</a>
+      <a class="link" href="#projects">Projects</a>
+      <a class="link" href="#experience">Experience</a>
+      <a class="link optional" href="#education">Education</a>
+      <a class="link" href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="wrap">
+      <img src="https://avatars.githubusercontent.com/u/139341566?v=4&amp;s=320" alt="Faizan Saleem Siddiqui" width="160" height="160">
+      <div>
+        <h1>Faizan Saleem Siddiqui</h1>
+        <p class="title">Embedded Firmware Engineer</p>
+        <p class="sub">BLE wearables &amp; wireless audio · Zephyr / nRF52 · STM32 · ESP32 · DSP<br>
+          Visiting Faculty, Embedded Systems · Quaid-i-Azam University, Islamabad</p>
+        <div class="buttons">
+          <a class="btn primary" href="https://www.linkedin.com/in/faizan-saleem-siddiqui-4411bb247/">LinkedIn</a>
+          <a class="btn" href="https://github.com/FaizanSSDQ">GitHub</a>
+          <a class="btn" href="mailto:faizansaleemsdq@gmail.com">Email</a>
+          <a class="btn" href="https://x.com/Bilingual_USER">X</a>
+          <a class="btn" href="https://medium.com/@faizyrim.114978">Medium</a>
+        </div>
+        <span class="badge">Open to embedded / firmware roles worldwide</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="wrap">
+        <h2>About</h2>
+        <p class="lead">I build production firmware for battery-powered wireless devices. In my current
+          role I develop firmware for <b>BLE biosignal wearables</b> and <b>true-wireless audio
+          earbuds</b>: multi-channel data acquisition and real-time BLE streaming on nRF52 with Zephyr,
+          secure over-the-air updates with MCUboot and signed images, fuel-gauge battery management,
+          power optimisation verified with the Nordic Power Profiler Kit, and multi-MCU charging-case
+          firmware.</p>
+        <p class="lead">Alongside industry work I teach Real-Time Systems, Microcontroller Interfacing and
+          AI/ML on Embedded Devices as Visiting Faculty at Quaid-i-Azam University, where I completed my
+          BS in Electronics with the 1st position in my batch and am now finishing my MS.</p>
+
+        <div class="skills" style="margin-top:24px">
+          <div><b>Wireless &amp; low power</b><span>BLE peripherals and streaming, Bluetooth TWS audio, OTA-DFU with MCUboot, power profiling, fuel gauges</span></div>
+          <div><b>Real-time firmware</b><span>Zephyr, FreeRTOS, STM32 HAL, ESP-IDF; DMA-driven acquisition, interrupt-safe design</span></div>
+          <div><b>Signal processing</b><span>Sampling and filtering, modulation and detection, integer DSP on microcontrollers</span></div>
+          <div><b>Hardware &amp; production</b><span>Bring-up and debugging, sensor drivers (IMU, ADC, AFE), production flashing and test</span></div>
+          <div><b>Languages &amp; tools</b><span>Embedded C, C++, Python, MATLAB; Git, GitHub Actions, PPK2, oscilloscope, logic analyser</span></div>
+          <div><b>Microcontrollers</b><span>nRF52 / nRF54, STM32 F and L series, ESP32 / S3 / C3, CH32V003, RP2040</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <h2>Featured projects</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="meta">STM32L152 · C · DSP</div>
+            <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/stm32/fsk-modem">FSK modem on STM32</a></h3>
+            <p>1000-baud FSK through the DAC and ADC: an NCO transmitter, a sliding-correlator receiver with
+              start-bit synchronisation, and a bit error rate that matches theory.</p>
+            <div class="tags"><span class="tag">DAC + ADC DMA</span><span class="tag">NCO</span><span class="tag">Correlator</span><span class="tag">Host tests</span></div>
+          </article>
+          <article class="card">
+            <div class="meta">STM32L152 · C · Python</div>
+            <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/stm32/dual-channel-adc-dma-sampler">Dual-channel ADC sampler</a></h3>
+            <p>Timer-triggered ADC scan into a ping-pong circular DMA buffer, integer statistics,
+              CRC-framed UART DMA telemetry and a Python live viewer.</p>
+            <div class="tags"><span class="tag">Ping-pong DMA</span><span class="tag">Telemetry</span><span class="tag">CI</span></div>
+          </article>
+          <article class="card">
+            <div class="meta">STM32 · nRF52 · ESP32 · MATLAB</div>
+            <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects">Automation, RTOS &amp; signal processing</a></h3>
+            <p>Firmware and DSP projects documented as engineering case studies, with block diagrams,
+              timing analysis and firmware builds in continuous integration.</p>
+            <div class="tags"><span class="tag">FreeRTOS</span><span class="tag">Zephyr</span><span class="tag">DSP</span></div>
+          </article>
+          <article class="card">
+            <div class="meta">Python · Streamlit</div>
+            <h3><a href="https://github.com/FaizanSSDQ/AI-Web-Apps-Python-using-Streamlit">Streamlit web apps</a></h3>
+            <p>Seven apps for audio transcription, web scraping, data visualisation, text analytics and
+              image editing, with 115 automated tests.</p>
+            <div class="tags"><span class="tag">pytest</span><span class="tag">GitHub Actions</span></div>
+          </article>
+          <article class="card">
+            <div class="meta">AWS · Airflow · Terraform</div>
+            <h3><a href="https://github.com/FaizanSSDQ/Data-Engineering-and-Visualization-Projects">Data engineering on AWS</a></h3>
+            <p>Batch and streaming ingestion, Airflow orchestration, infrastructure as code, data quality
+              checks and monitoring.</p>
+            <div class="tags"><span class="tag">Kinesis</span><span class="tag">Airflow</span><span class="tag">Great Expectations</span></div>
+          </article>
+        </div>
+        <p style="margin-top:18px"><a href="https://github.com/FaizanSSDQ?tab=repositories">All repositories on GitHub →</a></p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <h2>Experience</h2>
+        <ul class="timeline">
+          <li>
+            <div class="when">Oct 2025 – present</div>
+            <h3>Embedded Firmware Engineer</h3>
+            <div class="org">BLE wearables &amp; wireless audio products · Pakistan</div>
+            <ul>
+              <li>Firmware for a BLE biopotential-sensing wearable on nRF52 (Zephyr / nRF Connect SDK): acquisition, on-device processing, packetization and real-time BLE streaming</li>
+              <li>Secure BLE OTA-DFU with MCUboot and custom-key image signing</li>
+              <li>MAX17055 fuel-gauge battery monitoring and power optimisation verified with the Power Profiler Kit II</li>
+              <li>Multi-MCU charging-case firmware; BMI270 IMU and IR proximity sensor drivers</li>
+              <li>Bluetooth audio firmware for true-wireless earbuds on Jieli SoCs: TWS link, ANC, touch controls</li>
+            </ul>
+          </li>
+          <li>
+            <div class="when">Sep 2024 – present</div>
+            <h3>Visiting Faculty, Embedded Systems</h3>
+            <div class="org">Quaid-i-Azam University · Islamabad</div>
+            <ul>
+              <li>Teaching Real-Time Systems (STM32, FreeRTOS), Microcontroller Interfacing (ESP32) and AI/ML on Embedded Devices (TinyML)</li>
+              <li>Supervising student IoT semester projects</li>
+            </ul>
+          </li>
+          <li>
+            <div class="when">Sep 2025 – Oct 2025</div>
+            <h3>Embedded Systems Engineer</h3>
+            <div class="org">CNGL Engineering · Rawalpindi</div>
+            <ul><li>Industrial oil-tank monitoring firmware: level and temperature sensing with calibration and filtering</li></ul>
+          </li>
+          <li>
+            <div class="when">Oct 2023 – Sep 2024</div>
+            <h3>Research Assistant, Autonomous Vehicles</h3>
+            <div class="org">COMSIP Lab, Quaid-i-Azam University</div>
+            <ul>
+              <li>YOLO-based stop-sign detection and motion control on a Raspberry Pi robot</li>
+              <li>Monitoring and management system for four autonomous vehicles on STM32 and Raspberry Pi</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="wrap">
+        <h2>Education &amp; certifications</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>MS Electronics</h3>
+            <div class="meta">Quaid-i-Azam University · 2024 – 2026 · CGPA 3.6</div>
+            <p>Research on reinforcement learning for adaptive drone systems.</p>
+          </div>
+          <div class="card">
+            <h3>BS Electronics</h3>
+            <div class="meta">Quaid-i-Azam University · 2020 – 2024 · CGPA 3.8</div>
+            <p>1st position in the batch throughout; QAU Merit, PEEF and Prime Minister's Youth scholarships.</p>
+          </div>
+          <div class="card">
+            <h3>Certifications</h3>
+            <p>IBM AI Engineering · Self-Driving Cars · Autonomous Vehicle Engineering · Machine Learning ·
+              <a href="https://coursera.org/verify/4GAZGCOZK15K">Introduction to Data Engineering (DeepLearning.AI &amp; AWS)</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div class="row">
+        <div><b style="color:var(--text)">Faizan Saleem Siddiqui</b> · Islamabad, Pakistan</div>
+        <div>
+          <a href="mailto:faizansaleemsdq@gmail.com">faizansaleemsdq@gmail.com</a> ·
+          <a href="https://www.linkedin.com/in/faizan-saleem-siddiqui-4411bb247/">LinkedIn</a> ·
+          <a href="https://github.com/FaizanSSDQ">GitHub</a> ·
+          <a href="https://x.com/Bilingual_USER">X</a> ·
+          <a href="https://medium.com/@faizyrim.114978">Medium</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
