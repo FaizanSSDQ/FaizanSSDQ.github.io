@@ -38,6 +38,22 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "The USB Book",
+    "alternativeHeadline": "Universal Serial Bus, from the Wire to the Protocol",
+    "author": { "@type": "Person", "name": "Faizan Saleem Siddiqui", "url": "https://faizanssdq.github.io/" },
+    "bookEdition": "First edition",
+    "datePublished": "2026-11",
+    "numberOfPages": 44,
+    "bookFormat": "https://schema.org/EBook",
+    "inLanguage": "en",
+    "url": "https://faizanssdq.github.io/assets/docs/the-usb-book-faizan-saleem-siddiqui.pdf",
+    "about": ["USB", "USB Type-C", "USB Power Delivery", "USB4", "Embedded systems"]
+  }
+  </script>
 
   <style>
     :root {
@@ -66,11 +82,11 @@
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+    .wrap { max-width: 1260px; margin: 0 auto; padding: 0 24px; }
     h2 { margin: 0 0 6px; font-size: 24px; letter-spacing: -.01em; }
     p { margin: 0 0 12px; }
     .section-intro { color: var(--muted); margin: 0 0 24px; max-width: 720px; }
-    .block { padding: 36px 0; }
+    .block { padding: 30px 0; }
     .block + .block { border-top: 1px solid var(--line); }
 
     /* ---- top bar and tabs ---- */
@@ -109,11 +125,15 @@
     .open::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #38a169; }
 
     /* ---- hero ---- */
-    .hero { padding: 48px 0 36px; }
-    .hero .grid { display: grid; grid-template-columns: 180px 1fr; gap: 36px; align-items: center; }
-    .hero img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; background: var(--chip);
-                border: 4px solid var(--surface); box-shadow: var(--shadow); }
-    .hero h1 { margin: 0; font-size: clamp(30px, 5vw, 44px); line-height: 1.1; letter-spacing: -.02em; }
+    .hero { padding: 36px 0 28px; }
+    .hero .grid { display: grid; grid-template-columns: 220px minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+    .hero .photo { width: 220px; height: 276px; border-radius: 18px; object-fit: cover; object-position: center 25%;
+                   background: var(--chip); border: 1px solid var(--line); box-shadow: var(--shadow); display: block; }
+    .hero .highlights { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .hero .hl { padding: 14px 16px; }
+    .hero .hl b { font-size: 15.5px; }
+    .hero .hl span { font-size: 13.5px; line-height: 1.45; display: block; }
+    .hero h1 { margin: 0; font-size: clamp(30px, 3.3vw, 44px); line-height: 1.1; letter-spacing: -.02em; }
     .hero .role { margin: 10px 0 6px; font-size: 19px; font-weight: 600; color: var(--accent); }
     .hero .sub { margin: 0 0 20px; color: var(--muted); }
 
@@ -126,15 +146,15 @@
     .hl b { display: block; font-size: 16.5px; margin-bottom: 4px; }
     .hl span { color: var(--muted); font-size: 14.5px; }
 
-    .about-text { display: grid; gap: 28px; grid-template-columns: 1.3fr 1fr; }
+    .about-text { display: grid; gap: 32px; grid-template-columns: 1fr 1.1fr; align-items: start; }
     .about-text p { color: var(--muted); }
-    .skills { display: grid; gap: 10px; }
+    .skills { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
     .skills div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; }
     .skills b { display: block; font-size: 14.5px; margin-bottom: 2px; }
     .skills span { color: var(--muted); font-size: 14px; }
 
     /* ---- featured project pills (About) ---- */
-    .pills { display: grid; gap: 16px; }
+    .pills { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
     .pill { display: flex; align-items: center; gap: 22px; padding: 14px 14px 14px 32px; border-radius: 999px;
             background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); color: var(--text);
             transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease; }
@@ -144,13 +164,13 @@
     .pill h3 { margin: 2px 0 4px; font-size: 19px; }
     .pill p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.5;
               display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    .pill .pic { flex: 0 0 230px; height: 112px; border-radius: 999px; overflow: hidden; background: var(--figure);
+    .pill .pic { flex: 0 0 180px; height: 104px; border-radius: 999px; overflow: hidden; background: var(--figure);
                  border: 1px solid var(--line); }
     .pill .pic img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
     .more { margin-top: 22px; text-align: center; }
 
     /* ---- experience & education ---- */
-    .two-col { display: grid; gap: 32px; grid-template-columns: 1.4fr 1fr; }
+    .two-col { display: grid; gap: 36px; grid-template-columns: 1.25fr 1fr; }
     .two-col h2 { margin-bottom: 18px; }
     .timeline { list-style: none; margin: 0; padding: 0; }
     .timeline > li { position: relative; padding: 0 0 22px 24px; border-left: 2px solid var(--line); margin-left: 6px; }
@@ -165,6 +185,58 @@
     .edu b { display: block; }
     .edu .meta { color: var(--faint); font-size: 14px; }
     .edu p { color: var(--muted); font-size: 14.5px; margin: 4px 0 0; }
+
+    /* ---- book cover (drawn in CSS, so it needs no image file) ---- */
+    .cover { position: relative; flex: none; width: 150px; aspect-ratio: 3 / 4.1; border-radius: 6px 12px 12px 6px; overflow: hidden;
+             background: linear-gradient(160deg, #1e3a5f 0%, #12263f 60%, #0b1a2c 100%); color: #fff;
+             box-shadow: 0 10px 24px rgba(16,24,40,.25), inset 6px 0 0 rgba(255,255,255,.08); padding: 16px 14px 12px;
+             display: flex; flex-direction: column; }
+    .cover::before { content: ""; position: absolute; left: 14px; right: 14px; top: 64%; height: 2px; background: #63a4ff;
+                     box-shadow: 0 8px 0 rgba(99,164,255,.45), 0 16px 0 rgba(99,164,255,.2); }
+    .cover .c-kicker { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #9fc5ff; font-weight: 700; }
+    .cover .c-title { font-size: 21px; font-weight: 800; line-height: 1.05; margin-top: 6px; letter-spacing: -.01em; }
+    .cover .c-sub { font-size: 9.5px; line-height: 1.35; color: #cfe0f5; margin-top: 6px; }
+    .cover .c-author { margin-top: auto; font-size: 9.5px; font-weight: 700; color: #e6edf3; }
+    .cover.large { width: 250px; padding: 24px 22px 18px; }
+    .cover.large .c-kicker { font-size: 11px; }
+    .cover.large .c-title { font-size: 36px; }
+    .cover.large .c-sub { font-size: 13px; }
+    .cover.large .c-author { font-size: 13px; }
+
+    .book-strip { display: flex; gap: 26px; align-items: center; background: var(--surface); border: 1px solid var(--line);
+                  border-radius: 20px; padding: 22px 26px; box-shadow: var(--shadow); }
+    .book-strip .txt { flex: 1; min-width: 0; }
+    .book-strip .kicker, .pub .kicker { font-size: 12.5px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .05em; }
+    .book-strip h3 { margin: 2px 0 6px; font-size: 21px; }
+    .book-strip p { color: var(--muted); margin-bottom: 14px; }
+
+    .pub { display: grid; grid-template-columns: 250px 1fr; gap: 36px; background: var(--surface); border: 1px solid var(--line);
+           border-radius: 22px; padding: 30px; box-shadow: var(--shadow); }
+    .pub h3 { margin: 4px 0 2px; font-size: 28px; letter-spacing: -.01em; }
+    .pub .subtitle { color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+    .pub p { color: var(--muted); }
+    .pub .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 6px 0 16px; font-size: 14px; color: var(--faint); }
+    .pub .facts b { color: var(--text); }
+    .chapters { columns: 2; column-gap: 28px; margin: 6px 0 18px; padding-left: 20px; color: var(--muted); font-size: 14.5px; }
+    .chapters li { break-inside: avoid; margin-bottom: 3px; }
+    .series { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); margin-top: 18px; }
+    .series div { background: var(--surface); border: 1px dashed var(--line); border-radius: 14px; padding: 14px 16px; }
+    .series b { display: block; }
+    .series span { color: var(--faint); font-size: 14px; }
+
+    .certs { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); }
+    .cert { display: flex; flex-direction: column; gap: 6px; background: var(--surface); border: 1px solid var(--line);
+            border-radius: 16px; padding: 18px 20px; box-shadow: var(--shadow); }
+    .cert .badge { width: 44px; height: 44px; border-radius: 12px; background: var(--accent-soft); color: var(--accent);
+                   display: grid; place-items: center; margin-bottom: 6px; }
+    .cert .type { font-size: 12.5px; font-weight: 700; color: var(--faint); text-transform: uppercase; letter-spacing: .05em; }
+    .cert b { font-size: 17px; line-height: 1.3; }
+    .cert p { margin: 0; color: var(--muted); font-size: 14.5px; }
+    .cert a { margin-top: auto; padding-top: 8px; font-weight: 600; font-size: 14px; }
+    .awards { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+    .awards div { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+    .awards b { display: block; }
+    .awards span { color: var(--muted); font-size: 14px; }
 
     /* ---- contact strip (About) ---- */
     .cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px;
@@ -226,15 +298,30 @@
     footer { padding: 28px 0 40px; border-top: 1px solid var(--line); color: var(--faint); font-size: 14px; }
     footer .row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; }
 
+    @media (max-width: 1100px) {
+      .hero .grid { grid-template-columns: 200px 1fr; }
+      .hero .photo { width: 200px; height: 250px; }
+      .hero .highlights { grid-column: 1 / -1; grid-template-columns: repeat(4, 1fr); }
+      .pills { grid-template-columns: 1fr; }
+      .pill .pic { flex-basis: 230px; }
+    }
     @media (max-width: 760px) {
-      .hero .grid, .about-text, .two-col { grid-template-columns: 1fr; }
+      .hero .grid, .about-text, .two-col, .pub { grid-template-columns: 1fr; }
+      .hero .highlights, .skills { grid-template-columns: 1fr 1fr; }
       .hero { text-align: center; }
-      .hero img { margin: 0 auto; width: 132px; height: 132px; }
+      .hero .photo { margin: 0 auto; width: 160px; height: 200px; }
       .hero .buttons { justify-content: center; }
+      .hero .hl { text-align: left; }
+      .book-strip { flex-direction: column; align-items: flex-start; }
+      .cover.large { margin: 0 auto; width: 200px; }
+      .chapters { columns: 1; }
       .pill { flex-direction: column; align-items: stretch; border-radius: 28px; padding: 18px; gap: 14px; }
       .pill .pic { flex: none; width: 100%; height: 140px; border-radius: 20px; }
       .brand .name { display: none; }
       .cta { padding: 20px; }
+    }
+    @media (max-width: 480px) {
+      .hero .highlights, .skills { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -247,6 +334,8 @@
       <nav class="tabs" aria-label="Sections">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#certifications">Certifications</a>
         <a href="#research">Research</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
@@ -259,7 +348,7 @@
     <section id="about" class="panel" aria-label="About">
       <div class="hero">
         <div class="wrap grid">
-          <img src="https://avatars.githubusercontent.com/u/139341566?v=4&amp;s=360" alt="Faizan Saleem Siddiqui" width="180" height="180">
+          <img class="photo" src="https://avatars.githubusercontent.com/u/139341566?v=4&amp;s=460" alt="Faizan Saleem Siddiqui" width="220" height="276">
           <div>
             <h1>Faizan Saleem Siddiqui</h1>
             <p class="role">Embedded Firmware Engineer</p>
@@ -269,22 +358,21 @@
               <a class="btn primary" href="#projects">View projects</a>
               <a class="btn" href="https://www.linkedin.com/in/faizan-saleem-siddiqui-4411bb247/">LinkedIn</a>
               <a class="btn" href="https://github.com/FaizanSSDQ">GitHub</a>
+              <a class="btn" href="#publications">The USB Book</a>
               <a class="btn" href="#contact">Contact</a>
             </div>
             <span class="open">Open to embedded / firmware roles worldwide</span>
+          </div>
+          <div class="highlights">
+              <div class="hl"><div class="kind">Industry</div><b>Wireless firmware</b><span>BLE wearables and Bluetooth TWS audio devices on nRF52 with Zephyr</span></div>
+              <div class="hl"><div class="kind">Reliability</div><b>Secure OTA &amp; low power</b><span>MCUboot with signed images, fuel-gauge battery management, power verified with the PPK2</span></div>
+              <div class="hl"><div class="kind">Teaching</div><b>Visiting Faculty</b><span>Real-Time Systems, Microcontroller Interfacing and TinyML at Quaid-i-Azam University</span></div>
+              <div class="hl"><div class="kind">Academics</div><b>1st position, BS Electronics</b><span>Merit scholar throughout; MS Electronics at Quaid-i-Azam University</span></div>
           </div>
         </div>
       </div>
 
       <div class="wrap">
-        <div class="block">
-          <div class="highlights">
-            <div class="hl"><div class="kind">Industry</div><b>Wireless firmware</b><span>BLE wearables and Bluetooth TWS audio devices on nRF52 with Zephyr</span></div>
-            <div class="hl"><div class="kind">Reliability</div><b>Secure OTA &amp; low power</b><span>MCUboot with signed images, fuel-gauge battery management, power verified with the PPK2</span></div>
-            <div class="hl"><div class="kind">Teaching</div><b>Visiting Faculty</b><span>Real-Time Systems, Microcontroller Interfacing and TinyML at Quaid-i-Azam University</span></div>
-            <div class="hl"><div class="kind">Academics</div><b>1st position, BS Electronics</b><span>Merit scholar throughout; MS Electronics at Quaid-i-Azam University</span></div>
-          </div>
-        </div>
 
         <div class="block">
           <div class="about-text">
@@ -335,6 +423,23 @@
         </div>
 
         <div class="block">
+          <div class="book-strip">
+            <div class="cover" aria-hidden="true"><span class="c-kicker">Study notes</span><span class="c-title">The USB Book</span>
+              <span class="c-sub">From the wire to the protocol</span><span class="c-author">Faizan Saleem Siddiqui</span></div>
+            <div class="txt">
+              <div class="kicker">Publication · First edition, November 2026</div>
+              <h3>The USB Book: Universal Serial Bus, from the Wire to the Protocol</h3>
+              <p>A 44-page technical guide to USB for engineers, students and interview candidates: signalling, packets,
+                enumeration, SuperSpeed, Type-C, Power Delivery and USB4, explained as a chain of engineering decisions.</p>
+              <div class="buttons">
+                <a class="btn primary" href="assets/docs/the-usb-book-faizan-saleem-siddiqui.pdf" target="_blank" rel="noopener">Read the book (PDF)</a>
+                <a class="btn" href="#publications">About the book</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="block">
           <div class="two-col">
             <div>
               <h2>Experience</h2>
@@ -370,7 +475,8 @@
                 <div><b>BS Electronics</b><span class="meta">Quaid-i-Azam University · CGPA 3.8</span>
                   <p>1st position in the batch; QAU Merit, PEEF and Prime Minister's Youth scholarships.</p></div>
                 <div><b>Certifications</b>
-                  <p>Self-Driving Cars · Autonomous Vehicle Engineering</p></div>
+                  <p>IBM AI Engineering · Self-Driving Cars · Autonomous Vehicle Engineering · Machine Learning ·
+                    <a href="#certifications">details and verification →</a></p></div>
               </div>
             </div>
           </div>
@@ -488,6 +594,98 @@
       </div>
     </section>
 
+    <!-- ================================================================ PUBLICATIONS -->
+    <section id="publications" class="panel" aria-label="Publications and documents">
+      <div class="wrap">
+        <div class="block">
+          <h2>Publications &amp; documents</h2>
+          <p class="section-intro">Technical writing on embedded interfaces, free to read and download.</p>
+          <article class="pub">
+            <div class="cover large" aria-hidden="true"><span class="c-kicker">Study notes · First edition</span><span class="c-title">The USB Book</span>
+              <span class="c-sub">Universal Serial Bus, from the Wire to the Protocol</span><span class="c-author">Faizan Saleem Siddiqui</span></div>
+            <div>
+              <div class="kicker">Book · PDF</div>
+              <h3>The USB Book</h3>
+              <div class="subtitle">Universal Serial Bus, from the Wire to the Protocol</div>
+              <div class="facts"><span><b>First edition</b> · November 2026</span><span><b>44</b> pages</span><span><b>16</b> chapters + glossary</span><span>English</span></div>
+              <p>USB is used without a thought every day, yet behind every plug-in is a precise sequence of electrical signalling,
+                packets and negotiation. This book explains it as a chain of engineering decisions, each with a reason:
+                from differential signalling, NRZI and bit stuffing on the wire, through packets, transfer types and
+                enumeration, to SuperSpeed, the Type-C connector, Power Delivery and USB4. It closes with USB in embedded
+                systems and FPGAs, a comparison with other interfaces and interview questions with model answers.</p>
+              <ol class="chapters">
+                <li>Why USB Exists</li><li>The Architecture: Host, Hubs and Devices</li><li>Connectors and Cables</li>
+                <li>The Electrical Layer of USB 2.0</li><li>Bits on the Wire: NRZI, Bit Stuffing, SYNC and EOP</li><li>Packets</li>
+                <li>Transactions and the Four Transfer Types</li><li>Enumeration: How a Device Introduces Itself</li>
+                <li>USB 3: SuperSpeed</li><li>USB Type-C</li><li>USB Power Delivery</li><li>USB4 and Thunderbolt</li>
+                <li>On-The-Go, Dual Role and Device-to-Device</li><li>USB in Embedded Systems and FPGAs</li>
+                <li>USB Compared with Other Interfaces</li><li>Interview Questions with Model Answers</li>
+              </ol>
+              <div class="buttons">
+                <a class="btn primary" href="assets/docs/the-usb-book-faizan-saleem-siddiqui.pdf" target="_blank" rel="noopener">Read online</a>
+                <a class="btn" href="assets/docs/the-usb-book-faizan-saleem-siddiqui.pdf" download>Download PDF (250 KB)</a>
+              </div>
+            </div>
+          </article>
+          <h2 style="margin-top:34px">Also in the series</h2>
+          <p class="section-intro">The USB Book is part of a series of technical study notes on digital interfaces.</p>
+          <div class="series">
+            <div><b>HDMI</b><span>High-Definition Multimedia Interface · coming soon</span></div>
+            <div><b>PCIe</b><span>Peripheral Component Interconnect Express · coming soon</span></div>
+            <div><b>Memory interfaces</b><span>coming soon</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ CERTIFICATIONS -->
+    <section id="certifications" class="panel" aria-label="Certifications">
+      <div class="wrap">
+        <div class="block">
+          <h2>Certifications</h2>
+          <p class="section-intro">Professional certificates and specializations; each can be verified on Coursera.</p>
+          <div class="certs">
+            <div class="cert">
+              <span class="badge"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.5-1.5 7.5 5-3 5 3-1.5-7.5"/></svg></span>
+              <span class="type">Professional Certificate · Coursera</span>
+              <b>IBM AI Engineering</b>
+              <p>Machine learning and deep learning with Python, scikit-learn, Keras, PyTorch and TensorFlow.</p>
+              <a href="https://www.coursera.org/account/accomplishments/professional-cert/HFYAM3T4JK6D" target="_blank" rel="noopener">Verify credential ↗</a>
+            </div>
+            <div class="cert">
+              <span class="badge"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.5-1.5 7.5 5-3 5 3-1.5-7.5"/></svg></span>
+              <span class="type">Specialization · Coursera</span>
+              <b>Self-Driving Cars</b>
+              <p>Vehicle dynamics and control, state estimation and localization, visual perception and motion planning.</p>
+              <a href="https://www.coursera.org/account/accomplishments/specialization/YNG3JNY6SMCN" target="_blank" rel="noopener">Verify credential ↗</a>
+            </div>
+            <div class="cert">
+              <span class="badge"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.5-1.5 7.5 5-3 5 3-1.5-7.5"/></svg></span>
+              <span class="type">Specialization · Coursera</span>
+              <b>Autonomous Vehicle Engineering</b>
+              <p>Sensors, perception and control for autonomous vehicles.</p>
+              <a href="https://www.coursera.org/account/accomplishments/specialization/XX3YQP78S7XP" target="_blank" rel="noopener">Verify credential ↗</a>
+            </div>
+            <div class="cert">
+              <span class="badge"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.5-1.5 7.5 5-3 5 3-1.5-7.5"/></svg></span>
+              <span class="type">Specialization · Coursera</span>
+              <b>Machine Learning</b>
+              <p>Supervised and unsupervised learning, neural networks and recommender systems.</p>
+              <a href="https://www.coursera.org/account/accomplishments/specialization/UMVT5XDRKKFX" target="_blank" rel="noopener">Verify credential ↗</a>
+            </div>
+          </div>
+          <h2 style="margin-top:34px">Awards &amp; scholarships</h2>
+          <p class="section-intro">Quaid-i-Azam University, Islamabad.</p>
+          <div class="awards">
+            <div><b>1st position, BS Electronics</b><span>Top of the batch, CGPA 3.8</span></div>
+            <div><b>QAU Merit Scholarship</b><span>Held throughout the BS programme</span></div>
+            <div><b>PEEF Scholarship</b><span>Punjab Educational Endowment Fund</span></div>
+            <div><b>Prime Minister's Youth Scholarship</b><span>Government of Pakistan</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ================================================================ RESEARCH -->
     <section id="research" class="panel" aria-label="Research">
       <div class="wrap">
@@ -562,7 +760,7 @@
   <footer>
     <div class="wrap row">
       <div>© Faizan Saleem Siddiqui · Embedded Firmware Engineer</div>
-      <div><a href="#about">About</a> · <a href="#projects">Projects</a> · <a href="#contact">Contact</a> · <a href="https://github.com/FaizanSSDQ">GitHub</a></div>
+      <div><a href="#about">About</a> · <a href="#projects">Projects</a> · <a href="#publications">Publications</a> · <a href="#contact">Contact</a> · <a href="https://github.com/FaizanSSDQ">GitHub</a></div>
     </div>
   </footer>
 
