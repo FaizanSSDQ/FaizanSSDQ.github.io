@@ -275,6 +275,26 @@
     .proj .foot { margin-top: auto; padding-top: 6px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
     .proj .foot a { font-weight: 600; font-size: 14px; white-space: nowrap; }
     .proj[hidden] { display: none; }
+    .wear-grid { display: grid; gap: 22px; grid-template-columns: 1fr 1fr; margin-bottom: 14px; }
+    .wear { display: grid; grid-template-rows: auto 1fr; background: var(--surface); border: 1px solid var(--line);
+            border-top: 4px solid var(--btn); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow);
+            transition: box-shadow .2s ease, transform .2s ease; }
+    .wear:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
+    .wear .shot { display: block; aspect-ratio: 16 / 8.2; overflow: hidden; background: var(--figure); border-bottom: 1px solid var(--line); }
+    .wear .shot img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+    .wear .body { padding: 18px 22px 20px; display: flex; flex-direction: column; gap: 9px; }
+    .wear .board { font-size: 12.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); }
+    .wear h3 { margin: 0; font-size: 21px; line-height: 1.25; }
+    .wear h3 a { color: var(--text); }
+    .wear h3 small { display: block; font-size: 15px; font-weight: 600; color: var(--muted); margin-top: 3px; }
+    .wear p { margin: 0; color: var(--muted); font-size: 14.5px; }
+    .wear ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 14px; }
+    .wear .foot { margin-top: auto; padding-top: 6px; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .wear .foot a { font-weight: 600; font-size: 14px; }
+    .lock { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px;
+            background: var(--accent-soft); color: var(--accent-strong); font-size: 12.5px; font-weight: 700; }
+    .lock svg.i { width: 14px; height: 14px; }
+    .sub-h { margin: 34px 0 6px; font-size: 22px; }
     .group-note { margin-top: 28px; color: var(--faint); font-size: 14px; text-align: center; }
 
     /* ---- coming soon ---- */
@@ -309,6 +329,7 @@
       .hero .photo { width: 200px; height: 250px; }
       .hero .highlights { grid-column: 1 / -1; grid-template-columns: repeat(4, 1fr); }
       .pills { grid-template-columns: 1fr; }
+      .wear-grid { grid-template-columns: 1fr; }
       .pill .pic { flex-basis: 230px; }
     }
     @media (max-width: 760px) {
@@ -432,6 +453,29 @@
         </div>
 
         <div class="block">
+          <h2>Health band &amp; BLE wearables</h2>
+          <p class="section-intro">Firmware designed for a health band on the nRF52840 with Zephyr RTOS.</p>
+          <div class="pills">
+            <a class="pill" href="https://github.com/FaizanSSDQ/Health-BLE-Wearable-Devices/tree/main/motioncore-imu-healthband">
+              <div class="txt">
+                <div class="kicker">nRF52840 · Zephyr · IMU</div>
+                <h3>MotionCore: wrist-motion intelligence</h3>
+                <p>A 6-axis IMU streamed at up to 1600 Hz with exact sensor timestamps, a live 3D monitor, sensor fusion and shock and free-fall detection.</p>
+              </div>
+              <div class="pic"><img src="assets/projects/motioncore.webp" alt="MotionCore 3D orientation view" loading="lazy"></div>
+            </a>
+            <a class="pill" href="https://github.com/FaizanSSDQ/Health-BLE-Wearable-Devices/tree/main/skinsense-optical-wear-detection">
+              <div class="txt">
+                <div class="kicker">nRF52840 · Bluetooth LE · optical</div>
+                <h3>SkinSense: optical wear detection</h3>
+                <p>Infrared proximity sensing for on-wrist detection and skin contact, controlled and streamed over a custom BLE service.</p>
+              </div>
+              <div class="pic"><img src="assets/projects/skinsense.webp" alt="SkinSense wear-detection illustration" loading="lazy"></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="block">
           <div class="book-strip">
             <div class="cover" aria-hidden="true"><span class="c-kicker">Study notes</span><span class="c-title">The USB Book</span>
               <span class="c-sub">From the wire to the protocol</span><span class="c-author">Faizan Saleem Siddiqui</span></div>
@@ -508,6 +552,45 @@
       <div class="wrap">
         <div class="block">
           <h2>Projects</h2>
+          <p class="section-intro">Health band firmware on Nordic nRF52, and STM32 firmware built around real peripherals.</p>
+
+          <h3 class="sub-h">Health band &amp; BLE wearables</h3>
+          <p class="section-intro">Designed for a health band project on the nRF52840 with Zephyr RTOS. The folder structure
+            is public; the source code is available on request.</p>
+          <div class="wear-grid">
+            <article class="wear">
+              <a class="shot" href="https://github.com/FaizanSSDQ/Health-BLE-Wearable-Devices/tree/main/motioncore-imu-healthband"><img src="assets/projects/motioncore.webp" alt="MotionCore Monitor showing the live 3D orientation of the sensor board" loading="lazy"></a>
+              <div class="body">
+                <div class="board">nRF52840 · Zephyr · Bosch BMI270</div>
+                <h3><a href="https://github.com/FaizanSSDQ/Health-BLE-Wearable-Devices/tree/main/motioncore-imu-healthband">MotionCore</a><small>Wrist-motion intelligence for health bands</small></h3>
+                <p>The motion engine behind wake-on-wrist, activity state and fall alerts: a 6-axis IMU sampled at up to
+                  1600 Hz through the sensor's own FIFO, with exact sensor timestamps and live loss counters.</p>
+                <ul>
+                  <li>Interrupt-driven FIFO streaming, 50 to 1600 Hz, zero sequence gaps at 800 samples/s</li>
+                  <li>Desktop monitor: live 3D orientation, Mahony sensor fusion, instrument dials</li>
+                  <li>Still, moving, shock and free-fall detection; 6-position calibration; CSV recording</li>
+                </ul>
+                <div class="foot"><span class="lock"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Code on request</span><a href="https://github.com/FaizanSSDQ/Health-BLE-Wearable-Devices/tree/main/motioncore-imu-healthband">Showcase &amp; structure →</a></div>
+              </div>
+            </article>
+            <article class="wear">
+              <a class="shot" href="https://github.com/FaizanSSDQ/Health-BLE-Wearable-Devices/tree/main/skinsense-optical-wear-detection"><img src="assets/projects/skinsense.webp" alt="Illustration of infrared wear detection on the wrist" loading="lazy"></a>
+              <div class="body">
+                <div class="board">nRF52840 · Zephyr · Bluetooth LE · ROHM RPR-0720</div>
+                <h3><a href="https://github.com/FaizanSSDQ/Health-BLE-Wearable-Devices/tree/main/skinsense-optical-wear-detection">SkinSense</a><small>Optical wear detection for health bands</small></h3>
+                <p>Infrared proximity sensing that knows when the band is on the wrist and how well it sits on the skin, so
+                  optical health measurements run only when they can be trusted, and battery is saved when they cannot.</p>
+                <ul>
+                  <li>Sensor driver with run-time LED current, pulse, gain and threshold control</li>
+                  <li>Custom BLE GATT service for streaming and commands; same shell over UART and RTT</li>
+                  <li>Hot-plug detection with I²C bus recovery, distance calibration, desktop studio</li>
+                </ul>
+                <div class="foot"><span class="lock"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Code on request</span><a href="https://github.com/FaizanSSDQ/Health-BLE-Wearable-Devices/tree/main/skinsense-optical-wear-detection">Showcase &amp; structure →</a></div>
+              </div>
+            </article>
+          </div>
+
+          <h3 class="sub-h">STM32 projects</h3>
           <p class="section-intro">STM32 firmware built around real peripherals: timers, DMA, ADC, DAC and PWM, with
             FreeRTOS where it fits. Each project has a portable, host-tested core, continuous integration and a README
             that explains the design, the measurements and how to bring it up.</p>
