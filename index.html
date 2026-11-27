@@ -57,23 +57,16 @@
 
   <style>
     :root {
-      --bg: #f6f7f9; --surface: #ffffff; --text: #1a202c; --muted: #4a5568; --faint: #718096;
-      --line: #e2e8f0; --accent: #2b6cb0; --accent-strong: #2c5282; --accent-soft: #ebf4ff; --chip: #edf2f7;
-      --shadow: 0 1px 2px rgba(16,24,40,.05), 0 6px 20px rgba(16,24,40,.06);
-      --shadow-hover: 0 2px 4px rgba(16,24,40,.06), 0 12px 32px rgba(16,24,40,.10);
-      --figure: #ffffff;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) {
-        --bg: #0f1419; --surface: #171d24; --text: #e6edf3; --muted: #a9b4c0; --faint: #7d8a97;
-        --line: #2a323c; --accent: #63a4ff; --accent-strong: #8fbcff; --accent-soft: #15253a; --chip: #212a34;
-        --shadow: none; --shadow-hover: 0 0 0 1px #2f3b48; --figure: #f3f5f7;
-      }
-    }
-    :root[data-theme="dark"] {
-      --bg: #0f1419; --surface: #171d24; --text: #e6edf3; --muted: #a9b4c0; --faint: #7d8a97;
-      --line: #2a323c; --accent: #63a4ff; --accent-strong: #8fbcff; --accent-soft: #15253a; --chip: #212a34;
-      --shadow: none; --shadow-hover: 0 0 0 1px #2f3b48; --figure: #f3f5f7;
+      color-scheme: dark;
+      --bg: #0c0c0e; --surface: #16161a; --surface-2: #1d1d22; --text: #ececef; --muted: #a8a8b3; --faint: #77777f;
+      --line: #2a2a31; --chip: #222228;
+      --accent: #b197fc;          /* purple for links, labels and highlights on dark grey */
+      --accent-strong: #d0bfff;
+      --accent-soft: #241d38;     /* purple tint behind active tabs and icons */
+      --btn: #7c4dff; --btn-hover: #6a3df0;   /* filled buttons: white text stays readable */
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+      --shadow-hover: 0 0 0 1px #4b3a7a, 0 12px 32px rgba(0,0,0,.5);
+      --figure: #f4f4f5;          /* project figures are drawn on white */
     }
     * { box-sizing: border-box; }
     body {
@@ -95,7 +88,7 @@
     header.top .wrap { display: flex; align-items: center; gap: 16px; min-height: 60px; }
     .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--text); white-space: nowrap; }
     .brand:hover { text-decoration: none; }
-    .brand .mark { width: 30px; height: 30px; border-radius: 8px; background: var(--accent); color: #fff;
+    .brand .mark { width: 30px; height: 30px; border-radius: 8px; background: var(--btn); color: #fff;
                    display: grid; place-items: center; font-size: 13px; font-weight: 700; }
     nav.tabs { display: flex; gap: 4px; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
     nav.tabs::-webkit-scrollbar { display: none; }
@@ -115,8 +108,8 @@
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px;
            border: 1px solid var(--line); background: var(--surface); color: var(--text); font-weight: 600; font-size: 14.5px; }
     .btn:hover { text-decoration: none; border-color: var(--accent); color: var(--accent); }
-    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-    .btn.primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); color: #fff; }
+    .btn.primary { background: var(--btn); border-color: var(--btn); color: #fff; }
+    .btn.primary:hover { background: var(--btn-hover); border-color: var(--btn-hover); color: #fff; }
     .tag { display: inline-block; padding: 2px 10px; border-radius: 999px; background: var(--chip); color: var(--muted);
            font-size: 12.5px; font-weight: 500; }
     .tags { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -188,14 +181,14 @@
 
     /* ---- book cover (drawn in CSS, so it needs no image file) ---- */
     .cover { position: relative; flex: none; width: 150px; aspect-ratio: 3 / 4.1; border-radius: 6px 12px 12px 6px; overflow: hidden;
-             background: linear-gradient(160deg, #1e3a5f 0%, #12263f 60%, #0b1a2c 100%); color: #fff;
+             background: linear-gradient(160deg, #3b2370 0%, #1d1433 55%, #0b0b0f 100%); color: #fff;
              box-shadow: 0 10px 24px rgba(16,24,40,.25), inset 6px 0 0 rgba(255,255,255,.08); padding: 16px 14px 12px;
              display: flex; flex-direction: column; }
-    .cover::before { content: ""; position: absolute; left: 14px; right: 14px; top: 64%; height: 2px; background: #63a4ff;
-                     box-shadow: 0 8px 0 rgba(99,164,255,.45), 0 16px 0 rgba(99,164,255,.2); }
-    .cover .c-kicker { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #9fc5ff; font-weight: 700; }
+    .cover::before { content: ""; position: absolute; left: 14px; right: 14px; top: 64%; height: 2px; background: #b197fc;
+                     box-shadow: 0 8px 0 rgba(177,151,252,.45), 0 16px 0 rgba(177,151,252,.2); }
+    .cover .c-kicker { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #c9b8ff; font-weight: 700; }
     .cover .c-title { font-size: 21px; font-weight: 800; line-height: 1.05; margin-top: 6px; letter-spacing: -.01em; }
-    .cover .c-sub { font-size: 9.5px; line-height: 1.35; color: #cfe0f5; margin-top: 6px; }
+    .cover .c-sub { font-size: 9.5px; line-height: 1.35; color: #ddd3f7; margin-top: 6px; }
     .cover .c-author { margin-top: auto; font-size: 9.5px; font-weight: 700; color: #e6edf3; }
     .cover.large { width: 250px; padding: 24px 22px 18px; }
     .cover.large .c-kicker { font-size: 11px; }
@@ -219,6 +212,19 @@
     .pub .facts b { color: var(--text); }
     .chapters { columns: 2; column-gap: 28px; margin: 6px 0 18px; padding-left: 20px; color: var(--muted); font-size: 14.5px; }
     .chapters li { break-inside: avoid; margin-bottom: 3px; }
+    .author { display: grid; grid-template-columns: 210px 1fr; gap: 32px; margin-top: 22px; padding: 30px;
+              background: linear-gradient(120deg, var(--surface) 0%, var(--surface-2) 100%); border: 1px solid var(--line);
+              border-left: 4px solid var(--btn); border-radius: 22px; box-shadow: var(--shadow); }
+    .author img { width: 210px; height: 262px; object-fit: cover; object-position: center 25%; border-radius: 16px;
+                  border: 1px solid var(--line); display: block; }
+    .author .kicker { font-size: 12.5px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; }
+    .author .name { margin: 6px 0 4px; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.08; letter-spacing: -.02em; font-weight: 800; }
+    .author .roles { color: var(--accent); font-weight: 600; margin-bottom: 14px; }
+    .author p { color: var(--muted); }
+    .author .areas { display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); margin: 16px 0 18px; }
+    .author .areas div { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+    .author .areas b { display: block; font-size: 15px; margin-bottom: 2px; }
+    .author .areas span { color: var(--muted); font-size: 13.5px; line-height: 1.45; display: block; }
     .series { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); margin-top: 18px; }
     .series div { background: var(--surface); border: 1px dashed var(--line); border-radius: 14px; padding: 14px 16px; }
     .series b { display: block; }
@@ -249,7 +255,7 @@
     .filters button { font: inherit; font-size: 14px; font-weight: 600; padding: 7px 16px; border-radius: 999px; cursor: pointer;
                       border: 1px solid var(--line); background: var(--surface); color: var(--muted); }
     .filters button:hover { border-color: var(--accent); color: var(--accent); }
-    .filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .filters button[aria-pressed="true"] { background: var(--btn); border-color: var(--btn); color: #fff; }
     .projects { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
     .proj { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line);
             border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); transition: box-shadow .2s ease, transform .2s ease; }
@@ -315,6 +321,9 @@
       .book-strip { flex-direction: column; align-items: flex-start; }
       .cover.large { margin: 0 auto; width: 200px; }
       .chapters { columns: 1; }
+      .author { grid-template-columns: 1fr; padding: 22px; }
+      .author img { width: 160px; height: 200px; }
+      .author .areas { grid-template-columns: 1fr; }
       .pill { flex-direction: column; align-items: stretch; border-radius: 28px; padding: 18px; gap: 14px; }
       .pill .pic { flex: none; width: 100%; height: 140px; border-radius: 20px; }
       .brand .name { display: none; }
@@ -627,6 +636,32 @@
               </div>
             </div>
           </article>
+
+          <section class="author" aria-label="About the author">
+            <img src="https://avatars.githubusercontent.com/u/139341566?v=4&amp;s=460" alt="Faizan Saleem Siddiqui" width="210" height="262" loading="lazy">
+            <div>
+              <div class="kicker">About the author</div>
+              <h3 class="name">Faizan Saleem Siddiqui</h3>
+              <div class="roles">Electronics Engineer · Embedded Firmware Engineer · Visiting Faculty, Quaid-i-Azam University, Islamabad</div>
+              <p>Faizan Saleem Siddiqui is an electronics engineer whose work lies where hardware meets information: the small
+                computers embedded inside devices, the mathematics that extracts meaning from signals, and the techniques that
+                carry data reliably through the air. He combines hands-on engineering practice with teaching, and serves as a
+                visiting faculty member at Quaid-i-Azam University, Islamabad, where he teaches Real-Time Systems,
+                Microcontroller Interfacing and AI/ML on Embedded Devices.</p>
+              <div class="areas">
+                <div><b>Embedded systems</b><span>Microcontroller-based design, firmware, and the interfaces that connect chips to sensors, peripherals and host computers.</span></div>
+                <div><b>Signal processing</b><span>Analysis, filtering and transformation of signals in communication and sensing systems.</span></div>
+                <div><b>Wireless data</b><span>Radio links, modulation and channel coding: moving data reliably without wires.</span></div>
+              </div>
+              <p>The USB Book grew out of a series of detailed study sessions on digital interfaces, written for engineers,
+                students and interview candidates who want to understand USB as a chain of engineering decisions.</p>
+              <div class="buttons">
+                <a class="btn primary" href="#about">Full profile</a>
+                <a class="btn" href="https://www.linkedin.com/in/faizan-saleem-siddiqui-4411bb247/">LinkedIn</a>
+                <a class="btn" href="mailto:faizansaleemsdq@yahoo.com">Email the author</a>
+              </div>
+            </div>
+          </section>
           <h2 style="margin-top:34px">Also in the series</h2>
           <p class="section-intro">The USB Book is part of a series of technical study notes on digital interfaces.</p>
           <div class="series">
