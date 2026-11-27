@@ -552,7 +552,7 @@
       <div class="wrap">
         <div class="block">
           <h2>Projects</h2>
-          <p class="section-intro">Health band firmware on Nordic nRF52, and STM32 firmware built around real peripherals.</p>
+          <p class="section-intro">Health band firmware on Nordic nRF52; STM32 and ESP32 firmware built around real peripherals; MATLAB signal processing and Python simulations for autonomous driving.</p>
 
           <h3 class="sub-h">Health band &amp; BLE wearables</h3>
           <p class="section-intro">Designed for a health band project on the nRF52840 with Zephyr RTOS. The folder structure
@@ -590,15 +590,19 @@
             </article>
           </div>
 
-          <h3 class="sub-h">STM32 projects</h3>
-          <p class="section-intro">STM32 firmware built around real peripherals: timers, DMA, ADC, DAC and PWM, with
-            FreeRTOS where it fits. Each project has a portable, host-tested core, continuous integration and a README
-            that explains the design, the measurements and how to bring it up.</p>
+          <h3 class="sub-h">Embedded, signal processing &amp; autonomous driving</h3>
+          <p class="section-intro">STM32 and ESP32 firmware built around real peripherals (timers, DMA, ADC, DAC, PWM,
+            Wi-Fi) with FreeRTOS where it fits; MATLAB signal-processing projects that also run in GNU Octave; and Python
+            simulations for autonomous driving. Every project has tests, continuous integration and a README that explains
+            the design, the measurements and how to run it.</p>
 
           <div class="filters" role="group" aria-label="Filter projects">
-            <button type="button" data-filter="all" aria-pressed="true">All (7)</button>
-            <button type="button" data-filter="dsp" aria-pressed="false">Signal processing &amp; instruments (4)</button>
-            <button type="button" data-filter="rtos" aria-pressed="false">FreeRTOS (3)</button>
+            <button type="button" data-filter="all" aria-pressed="true">All (21)</button>
+            <button type="button" data-filter="dsp" aria-pressed="false">STM32 · instruments &amp; DSP (4)</button>
+            <button type="button" data-filter="rtos" aria-pressed="false">STM32 · FreeRTOS (3)</button>
+            <button type="button" data-filter="esp32" aria-pressed="false">ESP32 · Wi-Fi &amp; IoT (6)</button>
+            <button type="button" data-filter="matlab" aria-pressed="false">MATLAB · DSP &amp; wearables (5)</button>
+            <button type="button" data-filter="python" aria-pressed="false">Python · autonomous driving (3)</button>
           </div>
 
           <div class="projects">
@@ -678,10 +682,164 @@
                 <div class="foot"><span class="facts"><span><b>48</b> host checks</span><span><b>9</b> model tests</span></span><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/stm32/freertos-periodic-tasks-jitter">Code &amp; docs →</a></div>
               </div>
             </article>
+
+            <article class="proj" data-cat="esp32">
+              <a class="shot" href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/freertos-wifi-robot-car"><img src="assets/projects/esp32-robot-car.webp" alt="Robot car control page with joystick" loading="lazy"></a>
+              <div class="body">
+                <div class="board">ESP32 · FreeRTOS</div>
+                <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/freertos-wifi-robot-car">FreeRTOS Wi-Fi Robot Car</a></h3>
+                <p>Dual-core FreeRTOS tasks driven from a phone joystick page, with obstacle avoidance, line following, a link watchdog that stops the car and fused distance sensing.</p>
+                <div class="tags"><span class="tag">FreeRTOS</span><span class="tag">WebSocket</span><span class="tag">Motor PWM</span><span class="tag">Watchdog</span></div>
+                <div class="foot"><span class="facts"><span><b>64</b> host checks</span></span><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/freertos-wifi-robot-car">Code &amp; docs →</a></div>
+              </div>
+            </article>
+
+            <article class="proj" data-cat="esp32">
+              <a class="shot" href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/espnow-sensor-network"><img src="assets/projects/esp32-espnow.webp" alt="Gateway dashboard with three sensor nodes" loading="lazy"></a>
+              <div class="body">
+                <div class="board">ESP32 · Wireless</div>
+                <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/espnow-sensor-network">ESP-NOW Sensor Network</a></h3>
+                <p>Deep-sleep sensor nodes with alarm wake-up send CRC-checked reports to a gateway that tracks loss, signal strength and online state per node, with ThingSpeak upload.</p>
+                <div class="tags"><span class="tag">ESP-NOW</span><span class="tag">Deep sleep</span><span class="tag">CRC</span><span class="tag">Dashboard</span></div>
+                <div class="foot"><span class="facts"><span><b>46</b> host checks</span></span><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/espnow-sensor-network">Code &amp; docs →</a></div>
+              </div>
+            </article>
+
+            <article class="proj" data-cat="esp32">
+              <a class="shot" href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/ultrasonic-radar"><img src="assets/projects/esp32-radar.webp" alt="Live radar page in the browser" loading="lazy"></a>
+              <div class="body">
+                <div class="board">ESP32 · Sensors</div>
+                <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/ultrasonic-radar">Ultrasonic &amp; Infrared Radar</a></h3>
+                <p>A 180° servo sweep with interrupt-timed ultrasonic echoes, temperature-corrected speed of sound, a Sharp IR cross-check, object detection and a live radar page.</p>
+                <div class="tags"><span class="tag">Interrupt timing</span><span class="tag">Servo</span><span class="tag">Sensor fusion</span><span class="tag">Web UI</span></div>
+                <div class="foot"><span class="facts"><span><b>29</b> host checks</span></span><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/ultrasonic-radar">Code &amp; docs →</a></div>
+              </div>
+            </article>
+
+            <article class="proj" data-cat="esp32">
+              <a class="shot" href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/esp32cam-streaming-server"><img src="assets/projects/esp32-cam.webp" alt="Camera page with live settings" loading="lazy"></a>
+              <div class="body">
+                <div class="board">ESP32-CAM · Video</div>
+                <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/esp32cam-streaming-server">ESP32-CAM Streaming Server</a></h3>
+                <p>MJPEG video on its own HTTP server and CPU core, login with lockout, a stream token, snapshots, flash LED control and live camera settings.</p>
+                <div class="tags"><span class="tag">MJPEG</span><span class="tag">esp_http_server</span><span class="tag">Auth + lockout</span><span class="tag">Dual core</span></div>
+                <div class="foot"><span class="facts"><span><b>66</b> host checks</span></span><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/esp32cam-streaming-server">Code &amp; docs →</a></div>
+              </div>
+            </article>
+
+            <article class="proj" data-cat="esp32">
+              <a class="shot" href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/wifi-waveform-generator"><img src="assets/projects/esp32-waveform.webp" alt="Generated waveforms from the DAC" loading="lazy"></a>
+              <div class="body">
+                <div class="board">ESP32 · Instrument</div>
+                <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/wifi-waveform-generator">Wi-Fi Waveform Generator</a></h3>
+                <p>DDS into both DACs through DMA with PolyBLEP anti-aliasing, sweeps and a sync output, controlled from the browser with a preview of the real samples.</p>
+                <div class="tags"><span class="tag">DDS</span><span class="tag">DAC DMA</span><span class="tag">PolyBLEP</span><span class="tag">Web UI</span></div>
+                <div class="foot"><span class="facts"><span><b>42</b> host checks</span></span><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/wifi-waveform-generator">Code &amp; docs →</a></div>
+              </div>
+            </article>
+
+            <article class="proj" data-cat="esp32">
+              <a class="shot" href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/wifi-logic-analyzer"><img src="assets/projects/esp32-logic.webp" alt="Logic analyzer viewer with decoded UART" loading="lazy"></a>
+              <div class="body">
+                <div class="board">ESP32 · Instrument</div>
+                <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/wifi-logic-analyzer">Wi-Fi Logic Analyzer</a></h3>
+                <p>8 channels at up to 2 MS/s sampled on a dedicated core, triggers with pre-trigger history, UART and I²C decoding and a browser viewer with VCD export.</p>
+                <div class="tags"><span class="tag">IRAM sampling</span><span class="tag">Triggers</span><span class="tag">UART / I²C</span><span class="tag">VCD</span></div>
+                <div class="foot"><span class="facts"><span><b>53</b> host checks</span></span><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/esp32/wifi-logic-analyzer">Code &amp; docs →</a></div>
+              </div>
+            </article>
+
+            <article class="proj" data-cat="matlab">
+              <a class="shot" href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/matlab/ble-gfsk-modem"><img src="assets/projects/matlab-ble-gfsk.webp" alt="Bit error rate against Eb/N0" loading="lazy"></a>
+              <div class="body">
+                <div class="board">MATLAB · Wireless PHY</div>
+                <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/matlab/ble-gfsk-modem">Bluetooth LE GFSK Modem</a></h3>
+                <p>The LE 1M PHY end to end: packet with CRC-24 and whitening, GFSK, access-address sync and carrier-offset removal. 0.1 % bit error rate at 11.6 dB.</p>
+                <div class="tags"><span class="tag">GFSK</span><span class="tag">CRC-24</span><span class="tag">Sync</span><span class="tag">BER</span></div>
+                <div class="foot"><span class="facts"><span><b>23</b> tests</span></span><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/matlab/ble-gfsk-modem">Code &amp; docs →</a></div>
+              </div>
+            </article>
+
+            <article class="proj" data-cat="matlab">
+              <a class="shot" href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/matlab/ppg-heart-rate-estimator"><img src="assets/projects/matlab-ppg.webp" alt="Heart-rate tracks while running" loading="lazy"></a>
+              <div class="body">
+                <div class="board">MATLAB · Wearable DSP</div>
+                <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/matlab/ppg-heart-rate-estimator">PPG Heart-Rate Estimator</a></h3>
+                <p>Wrist PPG with motion artefacts, cleaned by NLMS adaptive filtering with the accelerometer as reference: heart-rate error drops from 47.5 to 0.1 bpm while running.</p>
+                <div class="tags"><span class="tag">PPG</span><span class="tag">NLMS</span><span class="tag">Spectral tracking</span><span class="tag">Accelerometer</span></div>
+                <div class="foot"><span class="facts"><span><b>12</b> tests</span></span><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/matlab/ppg-heart-rate-estimator">Code &amp; docs →</a></div>
+              </div>
+            </article>
+
+            <article class="proj" data-cat="matlab">
+              <a class="shot" href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/matlab/imu-orientation-fusion"><img src="assets/projects/matlab-imu.webp" alt="Pitch of a moving wrist from four filters" loading="lazy"></a>
+              <div class="body">
+                <div class="board">MATLAB · Wearable sensing</div>
+                <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/matlab/imu-orientation-fusion">IMU Orientation Fusion</a></h3>
+                <p>Quaternion orientation with complementary, Mahony and Madgwick filters against ground truth (1.05° tilt RMS), plus three-stage fall detection.</p>
+                <div class="tags"><span class="tag">Quaternions</span><span class="tag">Madgwick</span><span class="tag">Mahony</span><span class="tag">Fall detection</span></div>
+                <div class="foot"><span class="facts"><span><b>16</b> tests</span></span><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/matlab/imu-orientation-fusion">Code &amp; docs →</a></div>
+              </div>
+            </article>
+
+            <article class="proj" data-cat="matlab">
+              <a class="shot" href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/matlab/digital-filter-designer"><img src="assets/projects/matlab-filters.webp" alt="FIR and IIR magnitude and group delay" loading="lazy"></a>
+              <div class="body">
+                <div class="board">MATLAB · DSP</div>
+                <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/matlab/digital-filter-designer">Digital Filter Designer</a></h3>
+                <p>Kaiser FIR and Butterworth IIR from first principles, a bit-exact Q15 model, CMSIS-DSP C header export and a coefficient-sensitivity demonstration.</p>
+                <div class="tags"><span class="tag">FIR / IIR</span><span class="tag">Q15</span><span class="tag">CMSIS-DSP</span><span class="tag">No toolboxes</span></div>
+                <div class="foot"><span class="facts"><span><b>33</b> tests</span></span><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/matlab/digital-filter-designer">Code &amp; docs →</a></div>
+              </div>
+            </article>
+
+            <article class="proj" data-cat="matlab">
+              <a class="shot" href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/matlab/fourier-analysis-lab"><img src="assets/projects/matlab-fourier.webp" alt="Gibbs overshoot of a square wave" loading="lazy"></a>
+              <div class="body">
+                <div class="board">MATLAB · Signals</div>
+                <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/matlab/fourier-analysis-lab">Fourier Analysis Lab</a></h3>
+                <p>Fourier series checked against closed forms, Gibbs overshoot (8.95 %), Parseval, FFT-based transforms and window side lobes.</p>
+                <div class="tags"><span class="tag">Fourier series</span><span class="tag">FFT</span><span class="tag">Windows</span><span class="tag">Octave CI</span></div>
+                <div class="foot"><span class="facts"><span><b>27</b> tests</span></span><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/matlab/fourier-analysis-lab">Code &amp; docs →</a></div>
+              </div>
+            </article>
+
+            <article class="proj" data-cat="python">
+              <a class="shot" href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/python/vehicle-localization-es-ekf"><img src="assets/projects/py-es-ekf.webp" alt="Fused trajectory against ground truth" loading="lazy"></a>
+              <div class="body">
+                <div class="board">Python · Sensor fusion</div>
+                <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/python/vehicle-localization-es-ekf">Vehicle Localisation with an ES-EKF</a></h3>
+                <p>A 15-state error-state Kalman filter fusing 200 Hz IMU, GNSS and LiDAR with bias estimation: 12 cm RMSE, statistically consistent, survives a 30 s GNSS outage.</p>
+                <div class="tags"><span class="tag">ES-EKF</span><span class="tag">IMU + GNSS + LiDAR</span><span class="tag">NEES</span><span class="tag">Quaternions</span></div>
+                <div class="foot"><span class="facts"><span><b>13</b> pytest</span></span><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/python/vehicle-localization-es-ekf">Code &amp; docs →</a></div>
+              </div>
+            </article>
+
+            <article class="proj" data-cat="python">
+              <a class="shot" href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/python/autonomous-path-tracking"><img src="assets/projects/py-path-tracking.webp" alt="Pure pursuit and Stanley on three paths" loading="lazy"></a>
+              <div class="body">
+                <div class="board">Python · Control</div>
+                <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/python/autonomous-path-tracking">Autonomous Path Tracking</a></h3>
+                <p>Pure pursuit against Stanley on a kinematic bicycle model with actuator limits and a curvature-limited speed profile: Stanley holds 2 cm RMS on a 15 m/s lane change.</p>
+                <div class="tags"><span class="tag">Pure pursuit</span><span class="tag">Stanley</span><span class="tag">Speed profile</span><span class="tag">Metrics</span></div>
+                <div class="foot"><span class="facts"><span><b>19</b> pytest</span></span><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/python/autonomous-path-tracking">Code &amp; docs →</a></div>
+              </div>
+            </article>
+
+            <article class="proj" data-cat="python">
+              <a class="shot" href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/python/bicycle-kinematic-model"><img src="assets/projects/py-bicycle.webp" alt="Three path predictors entering a bend" loading="lazy"></a>
+              <div class="body">
+                <div class="board">Python · Vehicle modelling</div>
+                <h3><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/python/bicycle-kinematic-model">Bicycle Kinematic Model for Path Prediction</a></h3>
+                <p>The kinematic bicycle model at the rear axle, centre of gravity and front axle, its validity measured against a dynamic tyre model, and a 3 s path predictor twice as accurate as CTRV.</p>
+                <div class="tags"><span class="tag">Kinematic bicycle</span><span class="tag">Slip angle</span><span class="tag">Prediction</span><span class="tag">Monte Carlo</span></div>
+                <div class="foot"><span class="facts"><span><b>19</b> pytest</span></span><a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects/tree/main/python/bicycle-kinematic-model">Code &amp; docs →</a></div>
+              </div>
+            </article>
           </div>
 
-          <p class="group-note">More projects for nRF52 (Zephyr / BLE), ESP32 and signal processing are being added.
-            <a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects">Browse the repository →</a></p>
+          <p class="group-note">Signals and Systems course exercises refined to the same standard, and the full source of
+            every project: <a href="https://github.com/FaizanSSDQ/Automation-and-Signal-Processing-Projects">browse the repository →</a></p>
         </div>
       </div>
     </section>
